@@ -16,7 +16,7 @@ Profissional com experiência em gestão e processos administrativos, em transi�
 
 ## Habilidades Técnicas
 
-- **Banco de Dados:** SQL, modelagem relacional e consultas básicas
+- **Banco de Dados:** SQL, modelagem relacional e consultas intermediárias
 - **Ferramentas:** MySQL
 - **Linguagens:** Python (básico para análise de dados)
 - **Pacote Office:** Avançado
