@@ -48,4 +48,15 @@ Profissional com experiência em gestão e processos administrativos, em transi�
 
 - **Prefeitura de São José dos Campos – SJC/SP (2017 – Atual):** Assistente em Gestão Municipal – Apoio em processos administrativos, análise de dados, criação de relatórios.
 - **Helifer – São Paulo/SP (2015 – 2017):** Engenharia de Produção – Suporte técnico e acompanhamento de produção, controle e análise de indicadores.
-- **Experiências anteriores resumidas:** Global Acqua, Prokraft, UNITAU e Th
+- **Experiências anteriores resumidas:** Global Acqua, Prokraft, UNITAU e Thesi Montagens (2004-2013)** – funções administrativas, de processo e de produção
+
+---
+
+## Projetos
+
+- *Projeto Acadêmico:* criação de banco de dados relacional para cadastro de clientes, com consultas em SQL para relatórios.
+- *Projeto de Análise:* elaboração de dashboards simples em Python utilizando consultas SQL para geração de insights estratégicos.
+
+## Idiomas
+
+- Inglês, Espanhol - básico
