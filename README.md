@@ -2,7 +2,7 @@
 
 ## Contato
 
-📞 (12) 98242-1106  
+📞 (12) 98105-6787  
 ✉️ [wagnergcosta@hotmail.com](mailto:wagnergcosta@hotmail.com)  
 💻 [GitHub](https://github.com/Costa-Wagner) | [LinkedIn](https://www.linkedin.com/in/wagner-costa-391b0726/)
 
