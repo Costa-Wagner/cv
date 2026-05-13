@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wagner Costa — CV</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300&display=swap');
+
+    :root {
+      --accent: #1565c0;
+      --accent-dark: #0f4a9e;
+      --text: #111111;
+      --text-light: #333333;
+      --text-muted: #666666;
+      --border: #e0e0e0;
+      --bg: #ffffff;
+      --bg-subtle: #faf7f7;
+      --badge-bg: #5b8ab55e;
+      --badge-border: #bbbbbb;
+      --skill-cat: #5b8ab5;
+      --dot-active: #1565c0;
+      --dot-inactive: #d0dce8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f2e8e8;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .page {
+      background: var(--bg);
+      max-width: 900px;
+      margin: 32px auto;
+      box-shadow: 0 4px 40px rgba(203, 13, 13, 0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      padding: 28px 40px 20px;
+      border-bottom: 2px solid var(--text);
+    }
+
+    .name {
+      font-size: 44px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .title {
+      color: var(--accent);
+      font-weight: 400;
+      font-size: 13.5px;
+      margin-bottom: 12px;
+    }
+
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    .contacts a {
+      color: var(--text-light);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .contacts a:hover { color: var(--accent); }
+
+    .contact-icon {
+      width: 14px;
+      height: 14px;
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    /* ── BODY LAYOUT ── */
+    .body {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      min-height: 1px;
+    }
+
+    .col-left {
+      padding: 28px 32px 32px 40px;
+      border-right: 1px solid var(--border);
+    }
+
+    .col-right {
+      padding: 28px 32px 32px 28px;
+      background: var(--bg);
+    }
+
+    /* ── SECTION ── */
+    .section { margin-bottom: 28px; }
+    .section:last-child { margin-bottom: 0; }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 12px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--text);
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-item { margin-bottom: 18px; }
+    .exp-item:last-child { margin-bottom: 0; }
+
+    .exp-role {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .exp-company {
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 12.5px;
+      margin-bottom: 3px;
+    }
+
+    .exp-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-bottom: 7px;
+    }
+
+    .exp-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      padding: 0;
+      text-align: justify;
+    }
+
+    .exp-bullets li {
+      padding-left: 12px;
+      position: relative;
+      color: var(--text-light);
+      font-size: 12.5px;
+      margin-bottom: 3px;
+      line-height: 1.5;
+    }
+
+    .exp-bullets li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px dashed var(--border);
+      margin: 10px 0;
+    }
+
+    /* Experiências anteriores */
+    .prev-exp-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .prev-companies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 7px;
+    }
+
+    .prev-company-tag {
+      color: var(--accent);
+      font-size: 11.5px;
+      font-weight: 500;
+    }
+
+    .prev-company-tag:not(:last-child)::after {
+      content: ' ·';
+      color: var(--text-muted);
+    }
+
+    /* ── FORMAÇÃO ── */
+    .edu-item { margin-bottom: 14px; }
+    .edu-item:last-child { margin-bottom: 0; }
+
+    .edu-degree {
+      font-weight: 600;
+      font-size: 12.5px;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .edu-school {
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    .edu-meta {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      display: flex;
+      gap: 10px;
+    }
+
+    /* ── PROJETOS ── */
+    .proj-item { margin-bottom: 16px; }
+    .proj-item:last-child { margin-bottom: 0; }
+
+    .proj-name {
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .proj-desc-short {
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    /* ── RESUMO ── */
+    .resumo-text {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 2;
+      text-align: justify;
+    }
+
+    /* ── CURSOS ── */
+    .curso-item {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .curso-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .curso-name {
+      font-weight: 600;
+      font-size: 12.5px;
+      color: var(--text);
+      margin-bottom: 1px;
+    }
+
+    .curso-inst {
+      font-size: 11.5px;
+      color: var(--text-muted);
+    }
+
+    .curso-hours {
+      display: inline-block;
+      margin-top: 3px;
+      font-size: 10.5px;
+      color: var(--text);
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      border-radius: 3px;
+      padding: 1px 6px;
+      font-weight: 500;
+    }
+
+    /* ── IDIOMAS ── */
+    .lang-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .lang-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .lang-name {
+      font-weight: 600;
+      font-size: 12.5px;
+      color: var(--text);
+    }
+
+    .lang-level {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .lang-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--dot-inactive);
+    }
+
+    .dot.active { background: var(--dot-active); }
+
+    /* ── HARD SKILLS ── */
+    .skill-cat { margin-bottom: 12px; }
+    .skill-cat:last-child { margin-bottom: 0; }
+
+    .skill-cat-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--skill-cat);
+      margin-bottom: 6px;
+      margin-top: 8px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .badge {
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--text);
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    /* ── ONLINE ── */
+    .online-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .online-item:last-child { margin-bottom: 0; }
+
+    .online-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .online-icon svg { width: 16px; height: 16px; }
+
+    .online-label {
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--text);
+      margin-bottom: 1px;
+    }
+
+    .online-url {
+      font-size: 11px;
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .online-url:hover { text-decoration: underline; }
+
+    /* ── CABEÇALHO AZUL ── */
+    .cv-cabecalho {
+      position: relative;
+      width: 100%;
+      z-index: 10; 
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #1a3a5c 0%, #2e6da4 100%);
+      padding: 1.5rem 2.3rem;
+      gap: 3rem;
+      flex-wrap: nowrap;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      justify-content: flex-start;
+    }
+
+    .cv-cabecalho-esq h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 0.2rem 0;
+      letter-spacing: -0.3px;
+    }
+
+    .cv-subtitulo {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.82);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .cv-cabecalho-divisor {
+      width: 1px;
+      height: 100px;
+      background-color: rgba(255,255,255,0.3);
+      flex-shrink: 0;
+    }
+
+    .cv-cabecalho-dir {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.25rem;
+      min-width: 220px;
+      margin-left: auto;
+      align-items: flex-end; 
+    }
+
+    .cv-cabecalho-dir span,
+    .cv-cabecalho-dir a {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.88);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cv-cabecalho-dir a:hover {
+      text-decoration: underline;
+      color: #ffffff;
+    }
+
+    @media print {
+      @page { size: A4; margin: 1cm; }
+
+      body {
+        padding-top: 0;
+        flex-grow: 1;
+        font-size: 10pt;
+        line-height: 1.3;
+        background: #fff;
+      }
+
+      .cv-cabecalho { padding: 1rem 1.5rem; }
+      .cv-cabecalho-esq h1 { font-size: 18pt; }
+      .cv-subtitulo { font-size: 9pt; }
+      .cv-cabecalho-divisor { height: 100px; }
+
+      nav, footer, .btn-download, .no-print { display: none }
+
+      a { text-decoration: none ; color: #fff; }
+
+      .page { box-shadow: none; margin: 0; }
+
+      .page-break-top {
+        break-before: page;
+        page-break-before: always;
+        padding-top: 1cm;
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- CABEÇALHO -->
+    <div class="cv-cabecalho">
+      <div class="cv-cabecalho-esq">
+        <h1>Wagner Gonçalves Costa</h1>
+        <div class="cv-subtitulo">
+          Desenvolvedor de Software &nbsp;|&nbsp; Engenharia de Produção &nbsp;|&nbsp; Gestão Pública
+        </div>
+      </div>
+
+      <div class="cv-cabecalho-divisor"></div>
+
+      <div class="cv-cabecalho-dir">
+        <span>São José dos Campos – SP</span>
+        <a href="tel:+5512981056787">(12) 98105-6787</a>
+        <a href="mailto:wagnergcosta@hotmail.com">wagnergcosta@hotmail.com</a>
+        <a href="https://www.linkedin.com/in/costa-wagner/" target="_blank">linkedin.com/in/costa-wagner</a>
+        <a href="https://github.com/Costa-Wagner" target="_blank">github.com/Costa-Wagner</a>
+        <a href="https://portfolio-wagner-nu.vercel.app" target="_blank">portfolio-wagner-nu.vercel.app</a>
+      </div>
+    </div>
+
+    <!-- BODY: duas colunas -->
+    <div class="body">
+
+      <!-- COL ESQUERDA -->
+      <div class="col-left">
+
+        <!-- EXPERIÊNCIAS -->
+        <div class="section">
+          <div class="section-title">Experiências</div>
+
+          <div class="exp-item">
+            <div class="exp-role">Servidor Requisitado</div>
+            <div class="exp-company">Tribunal Regional Eleitoral de São Paulo</div>
+            <div class="exp-meta">
+              <span>
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                mar/2024 – atualmente
+              </span>
+              <span>
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                SJC/SP
+              </span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Atuação em processos eleitorais e administrativos com operação diária de múltiplos sistemas institucionais: SEI, e-Título, Elo 22, Infodip, Odin e PJe</li>
+              <li>Responsável por cadastro e regularização de títulos eleitorais</li>
+              <li>Análise de conformidades legais e emissão de certidões</li>
+              <li>Condução de processos administrativos de prestação de contas</li>
+            </ul>
+          </div>
+
+          <hr class="divider">
+
+          <div class="exp-item">
+            <div class="exp-role">Assistente em Gestão Municipal</div>
+            <div class="exp-company">Prefeitura de São José dos Campos</div>
+            <div class="exp-meta">
+              <span>
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                jul/2017 – mar/2024 (servidor cedido)
+              </span>
+              <span>
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                SJC/SP
+              </span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Atuação em processos administrativos municipais com foco em tributação e cadastro imobiliário</li>
+              <li>Levantamento de débitos e parcelamento de tributos</li>
+              <li>Atualização de cadastro imobiliário</li>
+              <li>Emissão de Certidão Negativa de Débitos Municipais (CNDM)</li>
+              <li>Operação de sistemas digitais de gestão tributária</li>
+              <li>Atendimento ao cidadão</li>
+            </ul>
+          </div>
+
+          <hr class="divider">
+
+          <div class="exp-item">
+            <div class="exp-role">Engenheiro Gestor Empresarial</div>
+            <div class="exp-company">Helifer</div>
+            <div class="exp-meta">
+              <span>
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                out/2015 – jul/2017
+              </span>
+              <span>
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                São Paulo/SP
+              </span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Análise e otimização de processos industriais</li>
+              <li>Planejamento e controle da produção</li>
+              <li>Gestão de estoque e avaliação de custos</li>
+              <li>Implementação de sistemas e processos internos</li>
+              <li>Elaboração de instruções de trabalho</li>
+            </ul>
+          </div>
+
+          <hr class="divider">
+
+          <div class="exp-item">
+            <div class="prev-exp-label">Experiências Anteriores</div>
+            <div class="prev-exp-label">Engenharia de Qualidade · PCP · Logística</div>
+            <div class="prev-companies">
+              <span class="prev-company-tag">Global Acqua</span>
+              <span class="prev-company-tag">Prokraft</span>
+              <span class="prev-company-tag">UNITAU</span>
+              <span class="prev-company-tag">Thesi Montagens</span>
+            </div>
+            <div class="exp-meta"><span>2004 – 2013</span></div>
+            <ul class="exp-bullets">
+              <li>Atuação em engenharia de qualidade e logística</li>
+              <li>Planejamento e controle da produção</li>
+              <li>Administração acadêmica</li>
+              <li>Gestão em indústrias metalúrgica, equipamentos e papel</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FORMAÇÃO -->
+        <div class="section page-break-top">
+          <div class="section-title">Formação</div>
+
+          <div class="edu-item">
+            <div class="edu-degree">Tecnólogo em Desenvolvimento de Software Multiplataforma</div>
+            <div class="edu-school">FATEC São José dos Campos</div>
+            <div class="edu-meta"><span>2025 – 2028 (previsão)</span><span>São José dos Campos/SP</span></div>
+          </div>
+
+          <hr class="divider">
+
+          <div class="edu-item">
+            <div class="edu-degree">Tecnólogo em Gestão Pública</div>
+            <div class="edu-school">UNINTER – Centro Universitário Internacional</div>
+            <div class="edu-meta"><span>2018 – 2020</span><span>EAD – Brasil</span></div>
+          </div>
+
+          <hr class="divider">
+
+          <div class="edu-item">
+            <div class="edu-degree">Bacharel em Engenharia de Produção Mecânica</div>
+            <div class="edu-school">UNITAU – Universidade de Taubaté</div>
+            <div class="edu-meta"><span>2008 – 2011</span><span>Taubaté/SP</span></div>
+          </div>
+
+          <hr class="divider">
+
+          <div class="edu-item">
+            <div class="edu-degree">Intercâmbio Internacional</div>
+            <div class="edu-school">UANL – Universidad Autónoma de Nuevo León</div>
+            <div class="edu-meta"><span>2º sem. 2007</span><span>Monterrey, México</span></div>
+          </div>
+
+          <hr class="divider">
+
+          <div class="edu-item">
+            <div class="edu-degree">
+              Bacharel em Engenharia de Produção
+              <span style="color:var(--text-muted);font-weight:400;font-size:11px;">(trancado)</span>
+            </div>
+            <div class="edu-school">Centro Universitário FEI</div>
+            <div class="edu-meta"><span>2005 – 2007</span><span>São Bernardo do Campo/SP</span></div>
+          </div>
+        </div>
+
+        <!-- PROJETOS -->
+        <div class="section">
+          <div class="section-title">Projetos</div>
+
+          <div class="proj-item">
+            <div class="proj-name">AEROCODE · Projeto Acadêmico</div>
+            <div class="proj-desc-short">Sistema de Gestão de Produção de Aeronaves</div>
+            <div class="exp-meta"><span>1º sem. 2026</span></div>
+            <ul class="exp-bullets">
+              <li>Projeto de um MVP (protótipo funcional) em sistema em linha de comando (CLI) que simula o processo de produção aeronáutica, do cadastro à entrega</li>
+              <li>Controle de aeronaves, peças, etapas, testes e funcionários, com autenticação e níveis de permissão</li>
+              <li>Desenvolvido com POO modular e armazenamento via JSON</li>
+            </ul>
+          </div>
+
+          <hr class="divider">
+
+          <div class="proj-item">
+            <div class="proj-name">JANOSYS · Aprendizagem por Projeto Integrador</div>
+            <div class="proj-desc-short">Sistema para Gestão de Normas Aeronáuticas</div>
+            <div class="exp-meta"><span>1º sem. 2026</span></div>
+            <ul class="exp-bullets">
+              <li>Projeto em parceria com empresa do setor aeroespacial da região</li>
+              <li>Plataforma web para gestão normativa com filtros avançados e controle de acesso multinível.</li>
+              <li><strong>Atuação como DevTeam · FrontEnd:</strong> desenvolvimento de Layout Base (Template), navegação lateral com ACL (Access Control List) e painel operacional com lógica de estados de aprovação.</li>
+            </ul>
+          </div>
+
+          <hr class="divider">
+
+          <div class="proj-item">
+            <div class="proj-name">JANOSYS · Aprendizagem por Projeto Integrador</div>
+            <div class="proj-desc-short">Sistema para visualização de Dados do Censo 2010/2022</div>
+            <div class="exp-meta"><span>2º sem. 2025</span></div>
+            <ul class="exp-bullets">
+              <li>Desenvolvimento de um Dashboard interativo para visualização e análise de dados demográficos municipais, otimizando a tomada de decisão estratégica na distribuição de recursos públicos.</li>
+              <li><strong>Atuação como Product Owner:</strong> comunicação com cliente, definição de backlog e gestão de entregas</li>
+            </ul>
+          </div>
+        </div>
+
+      </div><!-- /col-left -->
+
+      <!-- COL DIREITA -->
+      <div class="col-right">
+
+        <!-- RESUMO -->
+        <div class="section">
+          <div class="section-title">Resumo</div>
+          <p class="resumo-text">Desenvolvedor em formação, com trajetória profissional em Engenharia de Produção, atuando na indústria e no setor público. Experiência em gestão de processos, controle de qualidade e administração pública. Atualmente cursa <strong>DSM · Desenvolvimento de Software Multiplataforma · FATEC/SJC</strong>, atuando em projetos práticos com HTML, CSS, TypeScript, Python, React, Flask, MySQL e Metodologia Ágil Scrum. Combina visão analítica de processos e regras de negócio com a construção de soluções tecnológicas eficientes.</p>
+        </div>
+
+        <!-- HARD SKILLS -->
+        <div class="section">
+          <div class="section-title">Hard Skills</div>
+
+          <div class="skill-cat">
+            <div class="skill-cat-label">Linguagens</div>
+            <div class="badges">
+              <span class="badge">HTML5</span>
+              <span class="badge">CSS3</span>
+              <span class="badge">Python</span>
+              <span class="badge">TypeScript</span>
+              <span class="badge">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="skill-cat">
+            <div class="skill-cat-label">Frameworks</div>
+            <div class="badges">
+              <span class="badge">React</span>
+              <span class="badge">Flask</span>
+              <span class="badge">Node.js</span>
+            </div>
+          </div>
+
+          <div class="skill-cat">
+            <div class="skill-cat-label">Banco de Dados</div>
+            <div class="badges">
+              <span class="badge">MySQL</span>
+              <span class="badge">Modelagem Relacional</span>
+              <span class="badge">SQL</span>
+            </div>
+          </div>
+
+          <div class="skill-cat">
+            <div class="skill-cat-label">Ferramentas</div>
+            <div class="badges">
+              <span class="badge">GitHub</span>
+              <span class="badge">Docker</span>
+              <span class="badge">AWS</span>
+              <span class="badge">Figma</span>
+              <span class="badge">Jira</span>
+            </div>
+          </div>
+
+          <div class="skill-cat">
+            <div class="skill-cat-label">Metodologias</div>
+            <div class="badges">
+              <span class="badge">Scrum</span>
+              <span class="badge">Metodologias Ágeis</span>
+            </div>
+          </div>
+
+          <div class="skill-cat">
+            <div class="skill-cat-label">Produtividade</div>
+            <div class="badges">
+              <span class="badge">Pacote Office Avançado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- IDIOMAS -->
+        <div class="section cv-form-idiomas page-break-top">
+            <div class="section">
+            <div class="section-title">Línguas</div>
+
+            <div class="lang-item">
+                <div class="lang-info">
+                <div class="lang-name">Inglês</div>
+                <div class="lang-level">Iniciante</div>
+                </div>
+                <div class="lang-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                </div>
+            </div>
+
+            <div class="lang-item">
+                <div class="lang-info">
+                <div class="lang-name">Espanhol</div>
+                <div class="lang-level">Iniciante</div>
+                </div>
+                <div class="lang-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                </div>
+            </div>
+
+            <div class="lang-item">
+                <div class="lang-info">
+                <div class="lang-name">Português</div>
+                <div class="lang-level">Nativo</div>
+                </div>
+                <div class="lang-dots">
+                <div class="dot active"></div>
+                <div class="dot active"></div>
+                <div class="dot active"></div>
+                <div class="dot active"></div>
+                <div class="dot active"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- CURSOS & TREINAMENTOS -->
+        <div class="section">
+          <div class="section-title">Cursos &amp; Treinamentos</div>
+
+          <div class="curso-item">
+            <div class="curso-name">Escola de Inovadores</div>
+            <div class="curso-inst">FATEC · SJC</div>
+            <span class="curso-hours">40h</span>
+          </div>
+
+          <div class="curso-item">
+            <div class="curso-name">Python Básico</div>
+            <div class="curso-inst">Fundação Bradesco</div>
+            <span class="curso-hours">18h</span>
+          </div>
+
+          <div class="curso-item">
+            <div class="curso-name">Empreendedorismo</div>
+            <div class="curso-inst">UNITAU · SEBRAE</div>
+            <span class="curso-hours">320h</span>
+          </div>
+        </div>
+
+        <!-- ENCONTRE-ME ON-LINE -->
+        <div class="section">
+          <div class="section-title">Encontre-me On-line</div>
+
+          <div class="online-item">
+            <div class="online-icon">
+              <svg fill="#1565c0" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div class="online-info">
+              <div class="online-label">LinkedIn</div>
+              <a href="https://linkedin.com/in/costa-wagner" target="_blank" class="online-url">linkedin.com/in/costa-wagner</a>
+            </div>
+          </div>
+
+          <div class="online-item">
+            <div class="online-icon">
+              <svg fill="#111111" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </div>
+            <div class="online-info">
+              <div class="online-label">GitHub</div>
+              <a href="https://github.com/Costa-Wagner" target="_blank" class="online-url">github.com/Costa-Wagner</a>
+            </div>
+          </div>
+
+          <div class="online-item">
+            <div class="online-icon">
+              <svg fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#1565c0" stroke-width="2"/><line x1="2" y1="12" x2="22" y2="12" stroke="#1565c0" stroke-width="2"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke="#1565c0" stroke-width="2"/></svg>
+            </div>
+            <div class="online-info">
+              <div class="online-label">Portfólio</div>
+              <a href="https://portfolio-wagner-nu.vercel.app" target="_blank" class="online-url">portfolio-wagner-nu.vercel.app</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /col-right -->
+
+    </div><!-- /body -->
+    
+  </div><!-- /page -->
+</body>
+</html>
