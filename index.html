@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wagner Costa — CV</title>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300&display=swap');
 
@@ -473,6 +474,76 @@
       color: #ffffff;
     }
 
+    /* Posiciona o grupo no canto inferior direito */
+    #containerAcoes {
+      position: fixed;
+      bottom: 98px;
+      right: 32px;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Estilização do Botão em Bloco Vertical baseado na imagem */
+    #btnAlternarCV {
+      display: flex;
+      flex-direction: column; /* Joga o texto para baixo do ícone */
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      color: #2b7fa1; /* Tom de azul idêntico ao da imagem enviada */
+      background-color: #ffffff;
+      border: 2px solid #2b7fa1;
+      border-radius: 12px; /* Bordas arredondadas suaves */
+      padding: 10px;
+      width: 95px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    /* Tamanho do ícone vetorial do documento */
+    #btnAlternarCV svg {
+      width: 52px;
+      height: 52px;
+      fill: #2b7fa1; /* Pinta o ícone com o azul correto */
+      margin-bottom: 4px;
+    }
+
+    /* Texto pequeno centralizado abaixo do ícone */
+    #btnAlternarCV span {
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* Efeito sutil ao passar o mouse */
+    #btnAlternarCV:hover {
+      background-color: #f2f8fa;
+      transform: translateY(-2px);
+    }
+
+    #btnImprimir {
+      display: inline-block;
+      visibility: visible;
+      opacity: 1;
+      position: fixed;
+      bottom: 30px;
+      right: 50px;
+      z-index: 99999;
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 50%;
+      padding: 12px;
+      font-size: 22px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
     @media print {
       @page { size: A4; margin: 0; }
 
@@ -500,6 +571,17 @@
         page-break-before: always;
         padding-top: 1.5cm;
         display: block;
+      }
+
+      #btnImprimir, .navbar, script {
+          display: none;
+          visibility: hidden;
+      }
+      
+      /* Sumir completamente com os elementos visuais na folha do PDF */
+      #containerAcoes, #btnImprimir, #btnAlternarCV, svg {
+          display: none;
+          visibility: hidden;
       }
     }
   </style>
@@ -532,7 +614,7 @@
     <!-- BODY: duas colunas -->
     <div class="body">
 
-      <!-- COL ESQUERDA -->
+<!-- COL ESQUERDA -->
       <div class="col-left">
 
         <!-- EXPERIÊNCIAS -->
@@ -554,7 +636,7 @@
             </div>
             <ul class="exp-bullets">
               <li>Atuação em processos eleitorais e administrativos com operação diária de múltiplos sistemas institucionais: SEI, e-Título, Elo 22, Infodip, Odin e PJe</li>
-              <li>Responsável por cadastro e regularização de títulos eleitorais</li>
+              <li>Responsável pelo processamento, validação e regularização de cadastros de títulos eleitorais.</li>
               <li>Análise de conformidades legais e emissão de certidões</li>
               <li>Condução de processos administrativos de prestação de contas</li>
             </ul>
@@ -689,7 +771,7 @@
             <ul class="exp-bullets">
               <li>Projeto de um MVP (protótipo funcional) em sistema em linha de comando (CLI) que simula o processo de produção aeronáutica, do cadastro à entrega</li>
               <li>Controle de aeronaves, peças, etapas, testes e funcionários, com autenticação e níveis de permissão</li>
-              <li>Desenvolvido com POO modular e armazenamento via JSON</li>
+              <li>Construção de arquitetura orientada a objetos (POO), persistência de dados estruturada via arquivos JSON e sistema interno de autenticação com controle de privilégios de acesso.</li>
             </ul>
           </div>
 
@@ -721,7 +803,7 @@
 
       </div><!-- /col-left -->
 
-      <!-- COL DIREITA -->
+<!-- COL DIREITA -->
       <div class="col-right">
 
         <!-- RESUMO -->
@@ -902,5 +984,33 @@
     </div><!-- /body -->
     
   </div><!-- /page -->
+
+  <script src="js/script.js" defer></script>
+
+  <!-- Container dos botões flutuantes na tela -->
+  <div id="containerAcoes">
+    
+    <!-- Botão de Alternar com ícone e texto abaixo -->
+    <a href="index.ats.html" id="btnAlternarCV" title="Ver Versão Design / ATS">
+      <svg xmlns="http://w3.org" viewBox="0 0 24 24">
+        <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+      </svg>
+      <span>Mude para</span>
+      <span>CV ATS</span>
+    </a>
+    <button id="btnImprimir" title="Imprimir CV">🖨️</button>
+  </div>
+    
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.getElementById('btnImprimir');
+      if (btn) btn.addEventListener('click', function() { window.print(); });
+      const current = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".navbar .nav-link").forEach(link => {
+        if (link.getAttribute("href") === current) link.classList.add("active");
+      });
+    });
+  </script>
+
 </body>
 </html>

@@ -1,3 +1,8 @@
+FAZER:
+. ajustar responsividade
+
+=======================
+
 # CV - Wagner Costa
 
 ## Contato

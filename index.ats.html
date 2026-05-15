@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Currículo - Wagner Gonçalves Costa</title>
+  <style>
+    /* Estilos Gerais Otimizados para Leitura e ATS */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #333333;
+      line-height: 1.5;
+      margin: 40 20 40 40px auto;
+      max-width: 800px;
+      padding: 0 20px;
+      background-color: #ffffff;
+    }
+    
+    h1 {
+      font-size: 26px;
+      color: #111111;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+    
+    .subtitulo {
+      font-size: 14px;
+      color: #555555;
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: bold;
+    }
+    
+    .contato {
+      text-align: center;
+      font-size: 13px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #cccccc;
+      padding-bottom: 15px;
+    }
+    
+    .contato a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    h2 {
+      font-size: 16px;
+      color: #111111;
+      text-transform: uppercase;
+      border-bottom: 2px solid #222222;
+      padding-bottom: 3px;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+    
+    h3 {
+      font-size: 14px;
+      color: #222222;
+      margin: 0;
+    }
+    
+    .detalhes-item {
+      font-size: 13px;
+      color: #555555;
+      margin: 2px 0 10px 0;
+    }
+    
+    ul {
+      margin: 0 0 15px 0;
+      padding-left: 20px;
+    }
+    
+    li {
+      font-size: 13px;
+      margin-bottom: 5px;
+      color: #333333;
+    }
+    
+    p {
+      font-size: 13px;
+      margin: 0 0 10px 0;
+      text-align: justify;
+    }
+
+  /* ==========================================================================
+     1. ESTILOS APENAS PARA A TELA (COMPUTADOR / CELULAR)
+     O navegador vai ler isto apenas no monitor e ignorar na impressão.
+     ========================================================================== */
+  @media screen {
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #333333;
+      line-height: 1.5;
+      margin: 40px auto;
+      max-width: 800px;
+      padding: 0 20px;
+      background-color: #ffffff;
+    }
+    
+    h1 { font-size: 26px; color: #111111; margin-bottom: 5px; text-align: center; }
+    .subtitulo { font-size: 14px; color: #555555; text-align: center; margin-bottom: 25px; font-weight: bold; }
+    .contato { text-align: center; font-size: 13px; margin-bottom: 30px; border-bottom: 1px solid #cccccc; padding-bottom: 15px; }
+    .contato a { color: #0066cc; text-decoration: none; }
+    h2 { font-size: 16px; color: #111111; text-transform: uppercase; border-bottom: 2px solid #222222; padding-bottom: 3px; margin-top: 25px; margin-bottom: 15px; }
+    h3 { font-size: 14px; color: #222222; margin: 0; }
+    .detalhes-item { font-size: 13px; color: #555555; margin: 2px 0 10px 0; }
+    ul { margin: 0 0 15px 0; padding-left: 20px; }
+    li { font-size: 13px; margin-bottom: 5px; color: #333333; }
+    p { font-size: 13px; margin: 0 0 10px 0; }
+
+
+        /* Posiciona o grupo no canto inferior direito */
+    #containerAcoes {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Estilização do Botão em Bloco Vertical baseado na imagem */
+    #btnAlternarCV {
+      display: flex;
+      flex-direction: column; /* Joga o texto para baixo do ícone */
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      color: #2b7fa1; /* Tom de azul idêntico ao da imagem enviada */
+      background-color: #ffffff;
+      border: 2px solid #2b7fa1;
+      border-radius: 12px; /* Bordas arredondadas suaves */
+      padding: 10px;
+      width: 75px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    /* Tamanho do ícone vetorial do documento */
+    #btnAlternarCV svg {
+      width: 52px;
+      height: 52px;
+      fill: #2b7fa1; /* Pinta o ícone com o azul correto */
+      margin-bottom: 4px;
+    }
+
+    /* Texto pequeno centralizado abaixo do ícone */
+    #btnAlternarCV span {
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* Efeito sutil ao passar o mouse */
+    #btnAlternarCV:hover {
+      background-color: #f2f8fa;
+      transform: translateY(-2px);
+    }
+
+    #btnImprimir {
+      display: inline-block;
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 50%;
+      padding: 12px;
+      font-size: 22px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  }
+
+    /* ==========================================================================
+     2. ESTILOS EXCLUSIVOS PARA IMPRESSÃO
+     ========================================================================== */
+    @media print {
+        @page {
+            size: A4 portrait;
+        }
+
+        #btnImprimir, .navbar, script {
+            display: none;
+            visibility: hidden;
+        }
+        /* Sumir completamente com os elementos visuais na folha do PDF */
+        #containerAcoes, #btnImprimir, #btnAlternarCV, svg {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Wagner Gonçalves Costa</h1>
+    <div class="subtitulo">Desenvolvedor de Software | Engenharia de Produção | Gestão Pública</div>
+    <div class="contato">
+      (12) 98105-6787 <br>
+      <a href="mailto:wagnergcosta@hotmail.com">wagnergcosta@hotmail.com</a> | 
+      <a href="https://linkedin.com" target="_blank">://linkedin.com</a> | 
+      <a href="https://github.com" target="_blank">://github.com</a> | 
+      <a href="https://vercel.app" target="_blank">portfolio-wagner-nu.vercel.app</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Resumo Profissional</h2>
+    <p>Desenvolvedor em formação, com trajetória profissional em Engenharia de Produção, atuando na indústria e no setor público. Experiência em gestão de processos, controle de qualidade e administração pública. Atualmente cursa <strong>DSM · Desenvolvimento de Software Multiplataforma · FATEC/SJC</strong>, atuando em projetos práticos com HTML, CSS, TypeScript, Python, React, Flask, MySQL e Metodologia Ágil Scrum. Combina visão analítica de processos e regras de negócio com a construção de soluções tecnológicas eficientes.</p>
+  </section>
+
+  <section>
+    <h2>Competências Técnicas</h2>
+    <p><strong>Linguagens:</strong> HTML5, CSS3, JavaScript, TypeScript, Python.</p>
+    <p><strong>Frameworks:</strong> React, Node.js, Flask.</p>
+    <p><strong>Bancos de Dados:</strong> MySQL, Modelagem Relacional, SQL.</p>
+    <p><strong>Ferramentas e Infraestrutura:</strong> GitHub, Docker, AWS, Figma.</p>
+    <p><strong>Metodologias:</strong> Scrum, Metodologias Ágeis.</p>
+    <p><strong>Pacote Office Avançado.</p>
+  </section>
+
+  <section>
+    <h2>Experiência Profissional</h2>
+    
+    <div>
+      <h3>Assistente em Gestão (Servidor Requisitado)</h3>
+      <div class="detalhes-item">Tribunal Regional Eleitoral de São Paulo — Março de 2024 – Atual | São José dos Campos - SP</div>
+      <ul>
+        <li>Atuação direta em processos eleitorais e administrativos operando sistemas institucionais críticos (SEI, e-Título, Elo 22, Infodip, Odin e PJe).</li>
+        <li>Responsável pelo processamento, validação e regularização de cadastros de títulos eleitorais.</li>
+        <li>Análise de conformidades legais e emissão de certidões.</li>
+        <li>Condução de processos administrativos de prestação de contas</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Assistente em Gestão Municipal (Servidor Cedido)</h3>
+      <div class="detalhes-item">Prefeitura de São José dos Campos — Julho de 2017 – Março de 2024 | São José dos Campos - SP</div>
+      <ul>
+        <li>Atuação em processos administrativos municipais com foco em tributação e cadastro imobiliário</li>        
+        <li>Levantamento de débitos e parcelamento de tributos</li>
+        <li>Atualização de cadastro imobiliário</li>
+        <li>Emissão de Certidão Negativa de Débitos Municipais (CNDM)</li>
+        <li>Operação de sistemas digitais de gestão tributária</li>
+        <li>Atendimento ao cidadão</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Engenheiro Gestor Empresarial</h3>
+      <div class="detalhes-item">Helifer — Outubro de 2015 – Julho de 2017 | São Paulo - SP</div>
+      <ul>
+        <li>Análise e otimização de processos industriais</li>
+        <li>Planejamento e controle da produção (PCP)</li>
+        <li>Gestão de estoque, avaliação de custos e mensuração de custos industriais.</li>
+        <li>Implementação de sistemas e processos internos</li>
+        <li>Elaboração de instruções de trabalho</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Experiências Anteriores (Engenharia de Qualidade / PCP / Logística)</h3>
+      <div class="detalhes-item">Global Acqua, Prokraft, UNITAU, Thesi Montagens — 2004 – 2013</div>
+      <ul>
+        <li>Atuação em engenharia de qualidade e logística</li>
+        <li>Planejamento e controle da produção</li>
+        <li>Administração acadêmica</li>
+        <li>Gestão em indústrias metalúrgica, equipamentos e papel</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projetos de Software</h2>
+    
+    <div>
+      <h3>AEROCODE - Sistema de Gestão de Produção de Aeronaves</h3>
+      <div class="detalhes-item">Projeto Acadêmico — 1º Semestre de 2026</div>
+      <ul>
+        <li>Projeto de um MVP (protótipo funcional) em sistema em linha de comando (CLI) que simula o processo de produção aeronáutica, do cadastro à entrega</li>
+        <li>Controle de aeronaves, peças, etapas, testes e funcionários, com autenticação e níveis de permissão</li>
+        <li>Construção de arquitetura orientada a objetos (POO), persistência de dados estruturada via arquivos JSON e sistema interno de autenticação com controle de privilégios de acesso.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>JANOSYS - Sistema para Gestão de Normas Aeronáuticas</h3>
+      <div class="detalhes-item">Aprendizagem por Projeto Integrador — 1º Semestre de 2026</div>
+      <ul>
+        <li>Projeto em parceria com empresa do setor aeroespacial de SJC</li>
+        <li>Implementação de interface dinâmica utilizando lógica de estados, navegação lateral protegida por ACL (Access Control List) e filtros complexos de pesquisa.</li>
+        <li>Atuação como Desenvolvedor Front-End no desenvolvimento de aplicação web responsiva para governança de conformidade e gestão normativa.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>JANOSYS - Sistema para visualização de Dados do Censo 2010-2022</h3>
+      <div class="detalhes-item">Aprendizagem por Projeto Integrador — 2º Semestre de 2025</div>
+      <ul>
+        <li>Desenvolvimento de um Dashboard interativo para visualização e análise de dados demográficos municipais, otimizando a tomada de decisão estratégica na distribuição de recursos públicos.</li>
+        <li>Atuação como Product Owner: comunicação com cliente, definição de backlog e gestão de entregas</li>
+      </ul>
+    </div>
+
+</section>
+
+  <section>
+    <h2>Formação Acadêmica</h2>
+    <p><strong>Tecnólogo em Desenvolvimento de Software Multiplataforma</strong><br>
+    FATEC São José dos Campos — Conclusão prevista: 2028 | São José dos Campos - SP</p>
+    
+    <p><strong>Tecnólogo em Gestão Pública</strong><br>
+    UNINTER – Centro Universitário Internacional — Conclusão: 2020 | (EAD)</p>
+    
+    <p><strong>Bacharel em Engenharia de Produção Mecânica</strong><br>
+    UNITAU – Universidade de Taubaté — Conclusão: 2011 | Taubaté - SP</p>
+
+    <p><strong>Intercâmbio Internacional</strong><br>
+    UANL – Universidad Autónoma de Nuevo León — 2º Semestre de 2007 | Monterrey, México</p>
+  </section>
+
+  <section>
+    <h2>Idiomas, Cursos e Extensões</h2>
+    <p><strong>Idiomas:</strong> Inglês (Básico) | Espanhol (Básico).</p>
+    <p><strong>Extensões:</strong> Escola de Inovadores (FATEC SJC - 40h) | Python Básico (Fundação Bradesco - 18h) | Empreendedorismo Avançado (UNITAU/SEBRAE - 320h).</p>
+  </section>
+
+  <!-- Container dos botões flutuantes na tela -->
+  <div id="containerAcoes">
+    
+    <!-- Botão de Alternar com ícone e texto abaixo -->
+    <a href="index.html" id="btnAlternarCV" title="Ver Versão Design / Padrão">
+        <svg xmlns="http://w3.org" viewBox="0 0 24 24">
+        <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+      </svg>
+      <span>Mude para CV padrão</span>
+    </a>
+    <button id="btnImprimir" title="Imprimir CV">🖨️</button>
+  </div>
+    
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.getElementById('btnImprimir');
+      if (btn) btn.addEventListener('click', function() { window.print(); });
+      const current = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".navbar .nav-link").forEach(link => {
+        if (link.getAttribute("href") === current) link.classList.add("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
